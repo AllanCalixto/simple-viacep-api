@@ -1,10 +1,12 @@
 package br.com.simple_viacep_api.simple_viacep_api.exceptions;
 
-public class ErroGeracaoJsonException extends RuntimeException {
+import br.com.simple_viacep_api.simple_viacep_api.models.records.Endereco;
+
+public class CepInvalidoException extends RuntimeException {
 
     private String mensagem;
 
-    public ErroGeracaoJsonException(String mensagem) {
+    public CepInvalidoException(String mensagem) {
         this.mensagem = mensagem;
     }
 
@@ -12,4 +14,5 @@ public class ErroGeracaoJsonException extends RuntimeException {
     public String getMessage() {
         return this.mensagem;
     }
+
 }
