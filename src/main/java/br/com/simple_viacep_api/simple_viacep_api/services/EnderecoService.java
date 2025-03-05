@@ -35,7 +35,10 @@ public class EnderecoService {
                     .send(request, HttpResponse.BodyHandlers.ofString());
 
             Endereco enderecoObj = new Gson().fromJson(response.body(), Endereco.class);
-            geradorJsonService.salvarJson(enderecoObj);
+            if (enderecoObj.cep() != null) {
+                geradorJsonService.salvarJson(enderecoObj);
+            }
+
             return enderecoObj;
 
         } catch (IOException | InterruptedException | IllegalStateException e) {
